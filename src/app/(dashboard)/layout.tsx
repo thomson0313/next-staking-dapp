@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { VPSConnectButton } from "@app/components/ethereum/connect-button";
 import Sidebar from "@app/components/layout/sidebar";
 import HoldersAreaPage from './page';
-import StakingPage from './staking';
+import StakingPage from '@app/app/(dashboard)/staking/page';
 
 function DashboardComponent() {
   return <HoldersAreaPage />;
@@ -19,7 +19,8 @@ export default function Dashboard({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [selectedComponent, setSelectedComponent] = useState('Dashboard');
+  const [selectedComponent, setSelectedComponent] = useState('Staking');
+
 
   const renderComponent = () => {
     switch (selectedComponent) {

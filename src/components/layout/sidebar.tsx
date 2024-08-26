@@ -29,12 +29,12 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="#"
+                href="/"
                 className={buttonVariants({
                   size: "icon",
                   variant: "ghost",
                   className: cn("rounded-lg", {
-                    "bg-primary-foreground": pathname === "/",
+                    "": pathname === "/",
                   }),
                 })}
                 aria-label="Dashboard"
@@ -54,9 +54,6 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
                 className={buttonVariants({
                   size: "icon",
                   variant: "ghost",
-                  className: cn("rounded-lg", {
-                    "bg-primary-foreground": pathname === "",
-                  }),
                 })}
                 aria-label="App"
                 target="_blank"
@@ -72,7 +69,7 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="/"
+                href="/staking"
                 className={buttonVariants({
                   size: "icon",
                   variant: "ghost",
@@ -80,7 +77,7 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
                     "bg-primary-foreground": pathname === "/",
                   }),
                 })}
-                aria-label="CardStackIcon"
+                aria-label="Staking"
                 onClick={() => onSelect('Staking')}
               >
                 <CardStackIcon className="size-5" />
