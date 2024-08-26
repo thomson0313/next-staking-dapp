@@ -19,7 +19,7 @@ export default function Dashboard({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [selectedComponent, setSelectedComponent] = useState('Staking');
+  const [selectedComponent, setSelectedComponent] = useState('Dashboard');
 
 
   const renderComponent = () => {

@@ -74,7 +74,7 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
                   size: "icon",
                   variant: "ghost",
                   className: cn("rounded-lg", {
-                    "bg-primary-foreground": pathname === "/",
+                    "": pathname === "/",
                   }),
                 })}
                 aria-label="Staking"
