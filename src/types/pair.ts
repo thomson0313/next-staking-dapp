@@ -69,3 +69,9 @@ export interface BaseToken {
   name: string;
   symbol: string;
 }
+
+export interface Epoch {
+  id: string,
+  rewards: string,
+  epochend:string
+}

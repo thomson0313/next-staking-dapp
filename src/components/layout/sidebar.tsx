@@ -5,22 +5,22 @@ import { CoinsIcon, ExternalLinkIcon, TargetIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { buttonVariants } from "@app/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip";
-import { DashboardIcon } from "@radix-ui/react-icons";
+import { DashboardIcon, CardStackIcon } from "@radix-ui/react-icons";
 
-export default function Sidebar() {
+export default function Sidebar({ onSelect }: { onSelect: (component: string) => void }) {
   const pathname = usePathname();
+
   return (
     <>
-      {/* If desktop, show sidebar */}
       <aside className="hidden md:flex inset-y fixed bg-background left-0 z-20 h-full flex-col border-r w-[56px]">
         <div className="border-b p-2">
           <Link
-            href="/"
+            href="#"
             aria-label="Pairs"
             className="rounded-lg h-[40px] w-[40px] flex items-center justify-center"
+            onClick={() => onSelect('Dashboard')}
           >
             <Image src="/logo.svg" alt="VPS AI Community" className="size-5 fill-foreground" width={20} height={20} />
           </Link>
@@ -29,7 +29,7 @@ export default function Sidebar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href="/"
+                href="#"
                 className={buttonVariants({
                   size: "icon",
                   variant: "ghost",
@@ -38,6 +38,7 @@ export default function Sidebar() {
                   }),
                 })}
                 aria-label="Dashboard"
+                onClick={() => onSelect('Dashboard')}
               >
                 <DashboardIcon className="size-5" />
               </Link>
@@ -54,7 +55,7 @@ export default function Sidebar() {
                   size: "icon",
                   variant: "ghost",
                   className: cn("rounded-lg", {
-                    "bg-primary-foreground": pathname === "/pairs",
+                    "bg-primary-foreground": pathname === "",
                   }),
                 })}
                 aria-label="App"
@@ -66,6 +67,27 @@ export default function Sidebar() {
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>
               App
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/"
+                className={buttonVariants({
+                  size: "icon",
+                  variant: "ghost",
+                  className: cn("rounded-lg", {
+                    "bg-primary-foreground": pathname === "/",
+                  }),
+                })}
+                aria-label="CardStackIcon"
+                onClick={() => onSelect('Staking')}
+              >
+                <CardStackIcon className="size-5" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right" sideOffset={5}>
+              Staking
             </TooltipContent>
           </Tooltip>
         </nav>
