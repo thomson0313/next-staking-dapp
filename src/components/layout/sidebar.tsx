@@ -34,7 +34,7 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
                   size: "icon",
                   variant: "ghost",
                   className: cn("rounded-lg", {
-                    "": pathname === "/",
+                    "bg-primary-foreground": pathname === "/",
                   }),
                 })}
                 aria-label="Dashboard"
@@ -74,7 +74,7 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
                   size: "icon",
                   variant: "ghost",
                   className: cn("rounded-lg", {
-                    "": pathname === "/",
+                    "bg-primary-foreground": pathname === "/staking",
                   }),
                 })}
                 aria-label="Staking"

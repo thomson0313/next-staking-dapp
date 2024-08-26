@@ -57,7 +57,7 @@ export default function StakingPage() {
       <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
         <div className="space-y-4 w-[80%]">
           <div className="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-3 gap-4 h-fit flex-1 p-4 rounded-lg border justify-between">
-            <div className="flex flex-col gap-1 h-fit items-center">
+            <div className="flex flex-col gap-1 h-fit items-start">
               <div className="flex items-center gap-1">
                 <DollarSignIcon size={16} className="text-primary" />
                 <div className="text-sm text-muted-foreground">
@@ -68,7 +68,7 @@ export default function StakingPage() {
                 $ 5000
               </div>
             </div>
-            <div className="flex flex-col gap-1 h-fit items-center">
+            <div className="flex flex-col gap-1 h-fit items-start">
               <div className="flex items-center gap-1">
                 <RotateCwIcon size={16} className="text-primary" />
                 <div className="text-sm text-muted-foreground">
@@ -77,7 +77,7 @@ export default function StakingPage() {
               </div>
               <div className="text-base font-medium">$ 1000</div>
             </div>
-            <div className="flex flex-col gap-1 h-fit items-center">
+            <div className="flex flex-col gap-1 h-fit items-start">
               <div className="flex items-center gap-1">
                 <CircleDollarSignIcon size={16} className="text-primary" />
                 <div className="text-sm text-muted-foreground">
