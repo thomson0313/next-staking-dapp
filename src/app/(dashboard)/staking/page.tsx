@@ -152,7 +152,7 @@ export default function StakingPage() {
               </div>
             </div>
           </div>
-          <Tabs.Root value={activeTab} onValueChange={setActiveTab} className="flex flex-col w-full " defaultValue="stake">
+          <Tabs.Root value={activeTab} onValueChange={setActiveTab} className="flex flex-col w-full" defaultValue="stake">
             <Tabs.List className="flex flex-row space-x-4">
               <Tabs.Trigger
                 value="stake"
