@@ -3,35 +3,14 @@
 import { useState } from 'react';
 import { VPSConnectButton } from "@app/components/ethereum/connect-button";
 import Sidebar from "@app/components/layout/sidebar";
-import HoldersAreaPage from './page';
-import StakingPage from '@app/app/(dashboard)/staking/page';
-
-function DashboardComponent() {
-  return <HoldersAreaPage />;
-}
-
-function StakingComponent() {
-  return <StakingPage />;
-}
 
 export default function Dashboard({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   const [selectedComponent, setSelectedComponent] = useState('Dashboard');
-
-
-  const renderComponent = () => {
-    switch (selectedComponent) {
-      case 'Dashboard':
-        return <DashboardComponent />;
-      case 'Staking':
-        return <StakingComponent />;
-      default:
-        return <></>;
-    }
-  };
 
   return (
     <div className="min-h-screen w-full pb-[57px] md:pb-0 md:pl-[56px]">
@@ -44,7 +23,7 @@ export default function Dashboard({
           <VPSConnectButton />
         </header>
         <main className="flex-1 overflow-auto">
-          {renderComponent()}
+          {children}
         </main>
       </div>
     </div>

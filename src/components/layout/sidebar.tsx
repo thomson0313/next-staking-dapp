@@ -11,7 +11,6 @@ import { DashboardIcon, CardStackIcon } from "@radix-ui/react-icons";
 
 export default function Sidebar({ onSelect }: { onSelect: (component: string) => void }) {
   const pathname = usePathname();
-
   return (
     <>
       <aside className="hidden md:flex inset-y fixed bg-background left-0 z-20 h-full flex-col border-r w-[56px]">
@@ -49,7 +48,7 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
+              <Link
                 href="https://cloud-beta.vpsai.io"
                 className={buttonVariants({
                   size: "icon",
@@ -60,7 +59,7 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
                 rel="noopener noreferrer"
               >
                 <ExternalLinkIcon className="size-5" />
-              </a>
+              </Link>
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>
               App
@@ -74,7 +73,7 @@ export default function Sidebar({ onSelect }: { onSelect: (component: string) =>
                   size: "icon",
                   variant: "ghost",
                   className: cn("rounded-lg", {
-                    "bg-primary-foreground": pathname === "/staking",
+                    "bg-primary-foreground": pathname === "/",
                   }),
                 })}
                 aria-label="Staking"
