@@ -1,8 +1,7 @@
 "use client";
 import { useState } from 'react';
-import { Button, buttonVariants } from "@app/components/ui/button";
+import { Button } from "@app/components/ui/button";
 import { Input } from "@app/components/ui/input";
-import { useQuery } from "@tanstack/react-query";
 import * as Tabs from "@radix-ui/react-tabs";
 import {
   BadgeCheckIcon,
